@@ -1,0 +1,27 @@
+# Web-фреймворк и сервер
+fastapi==0.115.6
+uvicorn[standard]==0.34.0
+pydantic==2.10.4
+python-multipart==0.0.19
+
+# ML / NLP
+scikit-learn==1.8.0
+numpy==2.2.1
+scipy==1.14.1
+nltk==3.9.1
+
+# Данные и утилиты
+pandas==2.2.3
+pyyaml==6.0.2
+
+# Визуализация (для ноутбука)
+matplotlib==3.10.0
+seaborn==0.13.2
+wordcloud==1.9.4
+
+# Ноутбуки
+jupyter==1.1.1
+
+# Тесты
+httpx==0.28.1
+pytest==8.3.4

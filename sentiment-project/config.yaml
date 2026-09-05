@@ -1,0 +1,35 @@
+# Конфигурация проекта
+
+data:
+  path: data/texts/review.csv   # путь к датасету (относительно корня проекта)
+  test_size: 0.2                # доля тестовой выборки
+  random_state: 42              # seed для воспроизводимости
+
+tfidf:
+  max_features: 30000           # максимальное число признаков TF-IDF
+  ngram_range: [1,2]          # учитываем униграммы и биграммы
+  min_df: 5                     # минимальная частота документа
+  max_df: 0.9                   # максимальная частота документа
+
+model:
+  type: logistic_regression     # logistic_regression | linear_svc | multinomial_nb
+  params:
+    max_iter: 1000
+    random_state: 42
+
+training:
+  cv_folds: 5                   # количество фолдов кросс-валидации
+
+paths:
+  model:    models/model.pkl      # сериализованная модель (vectorizer + classifier)
+  features: models/features.pkl  # список TF-IDF признаков
+
+api:
+  host: "0.0.0.0"
+  port: 8000
+  title: "Sentiment Classification API"
+  version: "1.0.0"
+
+logging:
+  level: INFO
+  format: "%(asctime)s [%(levelname)s] %(name)s: %(message)s"
